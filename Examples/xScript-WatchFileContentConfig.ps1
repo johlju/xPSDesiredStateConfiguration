@@ -32,10 +32,6 @@
     .PARAMETER FileContent
         The content to set for the new file.
         Defaults to 'Just some sample text to write to the file'.
-
-    .NOTES
-        Required modules in Automation service:
-        - xPSDesiredStateConfiguration
 #>
 Configuration xScript-WatchFileContentConfig {
     [CmdletBinding()]
