@@ -657,6 +657,9 @@ Publishes a 'FileInfo' object(s) to the pullserver configuration repository. It 
   * Opt-in for the common tests validate module files and script files.
   * All files change to encoding UTF-8 (without byte order mark).
 * xEnvironment path documentation update demonstrating usage with multiple values  ([issue #415](https://github.com/PowerShell/xPSDesiredStateConfiguration/issues/415). [Alex Kokkinos (@alexkokkinos)](https://github.com/alexkokkinos)
+* Changes to xWindowsProcess
+  * Increased the wait time in the integration tests since the tests
+    still failed randomly ([issue #420](https://github.com/PowerShell/xPSDesiredStateConfiguration/issues/420)).
 
 ### 8.3.0.0
 
