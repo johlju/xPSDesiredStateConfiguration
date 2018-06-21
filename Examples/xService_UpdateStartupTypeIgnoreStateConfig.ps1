@@ -32,7 +32,7 @@
         If State is not specified, the configuration will ensure that the state of the service is
         Running by default.
 #>
-Configuration xService-UpdateStartupTypeIgnoreStateConfig
+Configuration xService_UpdateStartupTypeIgnoreStateConfig
 {
     [CmdletBinding()]
     param ()

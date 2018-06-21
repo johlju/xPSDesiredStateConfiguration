@@ -34,7 +34,7 @@
         The content to set for the new file.
         Defaults to 'Just some sample text to write to the file'.
 #>
-Configuration xScript-WatchFileContentConfig {
+Configuration xScript_WatchFileContentConfig {
     [CmdletBinding()]
     param
     (
