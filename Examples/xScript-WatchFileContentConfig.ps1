@@ -1,18 +1,34 @@
+
 <#PSScriptInfo
+
 .VERSION 1.0.0
-.GUID 124cf79c-d637-4e50-8199-5cf4efb3572d
+
+.GUID f9306ebe-8af5-4dee-baf3-f3fac17891db
+
 .AUTHOR Microsoft Corporation
+
 .COMPANYNAME Microsoft Corporation
+
 .COPYRIGHT
+
 .TAGS DSCConfiguration
+
 .LICENSEURI https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/LICENSE
+
 .PROJECTURI https://github.com/PowerShell/xPSDesiredStateConfiguration
+
 .ICONURI
+
 .EXTERNALMODULEDEPENDENCIES xPSDesiredStateConfiguration
+
 .REQUIREDSCRIPTS
+
 .EXTERNALSCRIPTDEPENDENCIES
+
 .RELEASENOTES First version.
+
 .PRIVATEDATA 2016-Datacenter,2016-Datacenter-Server-Core
+
 #>
 
 #Requires -module @{ModuleName = 'xPSDesiredStateConfiguration';ModuleVersion = '8.2.0.0'}
@@ -87,3 +103,4 @@ Configuration xScript-WatchFileContentConfig {
         }
     }
 }
+
