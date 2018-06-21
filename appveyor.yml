@@ -8,6 +8,7 @@ environment:
     secure: uwd5h4xufRG6/4wEOUIrdEeTkXYIiLFydKXhP5ZKv5j8rR2acKOHrsL7c2UoYmZQ
 
 init:
+  - git config --global core.autocrlf true
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
