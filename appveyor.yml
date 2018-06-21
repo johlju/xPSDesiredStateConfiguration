@@ -15,7 +15,7 @@ install:
     - git clone https://github.com/johlju/DscResource.Tests
     - ps: Push-Location
     - ps: cd "$env:APPVEYOR_BUILD_FOLDER\DscResource.Tests"
-    - git checkout add-gallerydeploy
+    - git checkout debug-add-gallerydeploy
     - ps: Pop-Location
     - ps: |
         $moduleName = 'xPSDesiredStateConfiguration'
@@ -53,5 +53,4 @@ after_test:
 
 deploy_script:
   - ps: |
-        # TODO: -Branch should be remove so it defaults to the master branch only
-        Invoke-AppVeyorDeployTask -Branch @('dev','add-gallery-examples')
+        Invoke-AppVeyorDeployTask -Branch @('master-test')
