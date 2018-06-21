@@ -41,16 +41,16 @@ test_script:
             -DisableConsistency `
             -ExcludeTag @()
 
-#---------------------------------#
-#      deployment configuration   #
-#---------------------------------#
 after_test:
   - ps: |
         Import-Module -Name "$env:APPVEYOR_BUILD_FOLDER\DscResource.Tests\AppVeyor.psm1"
         Invoke-AppveyorAfterTestTask `
             -ResourceModuleName $moduleName
 
-# scripts to run before deployment
+#---------------------------------#
+#      deployment configuration   #
+#---------------------------------#
+
 deploy_script:
   - ps: |
         # TODO: -Branch should be remove so it defaults to the master branch only
