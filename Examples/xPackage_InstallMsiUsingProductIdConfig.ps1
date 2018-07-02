@@ -1,19 +1,3 @@
-<#PSScriptInfo
-.VERSION 1.0.0
-.GUID fd8e2fd1-7539-4d6c-a203-e88a99e7195d
-.AUTHOR Microsoft Corporation
-.COMPANYNAME Microsoft Corporation
-.COPYRIGHT
-.TAGS DSCConfiguration
-.LICENSEURI https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/LICENSE
-.PROJECTURI https://github.com/PowerShell/xPSDesiredStateConfiguration
-.ICONURI
-.EXTERNALMODULEDEPENDENCIES xPSDesiredStateConfiguration
-.REQUIREDSCRIPTS
-.EXTERNALSCRIPTDEPENDENCIES
-.RELEASENOTES First version.
-.PRIVATEDATA 2016-Datacenter,2016-Datacenter-Server-Core
-#>
 
 #Requires -module @{ModuleName = 'xPSDesiredStateConfiguration';ModuleVersion = '8.2.0.0'}
 
