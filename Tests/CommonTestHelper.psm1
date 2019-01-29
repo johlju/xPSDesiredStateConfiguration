@@ -801,22 +801,31 @@ function Test-SkipCi
     [CmdletBinding()]
     param
     (
-        [Parameter(Mandatory = $true)]
+        [Parameter()]
         [ValidateNotNullOrEmpty()]
         [System.String]
-        $Name,
+        $Name = $MyInvocation.PSCommandPath.Split('\')[-1],
 
         [Parameter(Mandatory = $true)]
         [ValidateSet('Unit', 'Integration')]
         [System.String]
         $Type
     )
+    (Get-PSCallStack)
+    (Get-PSCallStack) | % { $_ }
+    (Get-PSCallStack) | % {
+        Write-Verbose ('InvocationInfo.ScriptName: {0}' -f $_.InvocationInfo.ScriptName) -Verbose
+    }
+
+    Write-Verbose -Message ('$MyInvocation.PSCommandPath : {0}' -f $MyInvocation.PSCommandPath) -Verbose
+    Write-Verbose -Message ('@(Get-PSCallStack)[1].InvocationInfo.MyCommand.Name : {0}' -f @(Get-PSCallStack)[1].InvocationInfo.MyCommand.Name) -Verbose
+    Write-Verbose -Message ('(Get-PSCallStack)[1].ScriptName.Split(''\'')[-1] : {0}' -f (Get-PSCallStack)[1].ScriptName.Split('\')[-1]) -Verbose
 
     $result = $false
 
     if ($env:APPVEYOR -eq $true -and $env:CONFIGURATION -ne $Type)
     {
-        Write-Verbose -Message ('Tests for {0} will be skipped unless $env:CONFIGURATION is set to ''{1}''.' -f $Name, $Type) -Verbose
+        Write-Verbose -Message ('{1} tests for {0} will be skipped unless $env:CONFIGURATION is set to ''{1}''.' -f $Name, $Type) -Verbose
         $result = $true
     }
 
