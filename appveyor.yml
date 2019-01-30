@@ -67,6 +67,7 @@ for:
   matrix:
     only:
       - configuration: Unit
+        image: Visual Studio 2015
   environment:
     SkipAllCommonTests: True
 
@@ -76,6 +77,21 @@ for:
             -Type 'Default' `
             -CodeCoverage `
             -CodeCovIo `
+            -ExcludeTag @()
+
+-
+  matrix:
+    only:
+      - configuration: Unit
+        image: Visual Studio 2017
+  environment:
+    SkipAllCommonTests: True
+
+  test_script:
+    - ps: |
+        Invoke-AppveyorTestScriptTask `
+            -Type 'Default' `
+            -CodeCoverage `
             -ExcludeTag @()
 
 after_test:
