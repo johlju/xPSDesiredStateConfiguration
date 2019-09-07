@@ -33,7 +33,11 @@ matrix:
       image: Visual Studio 2015
 
 install:
-    - git clone https://github.com/PowerShell/DscResource.Tests
+    - git clone https://github.com/SSvilen/DscResource.Tests
+    - ps: Push-Location
+    - ps: cd "$env:APPVEYOR_BUILD_FOLDER\DscResource.Tests"
+    - git checkout KeywordsCheck
+    - ps: Pop-Location
     - ps: |
         $moduleName = 'xPSDesiredStateConfiguration'
         Import-Module -Name "$env:APPVEYOR_BUILD_FOLDER\DscResource.Tests\AppVeyor.psm1"
